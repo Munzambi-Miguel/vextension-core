@@ -46,6 +46,8 @@ Route::prefix('/')->group(function () {
 
         Route::post('init-atenimento', [\App\Http\Controllers\Atendimento\AtendimentoController::class, 'init'])->name('Atendimento.init');
 
+        Route::post('init-atenimento', [\App\Http\Controllers\Atendimento\AtendimentoController::class, 'oneBen'])->name('Atendimento.oneBen');
+
         Route::post('{uid}/finish-atenimento', [\App\Http\Controllers\Atendimento\AtendimentoController::class, 'store'])->name('Atendimento.store');
 
         Route::get('pdf-guia', [\App\SPDF\PDFController::class, 'generatePDF']);
